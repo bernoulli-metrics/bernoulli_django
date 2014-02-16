@@ -57,7 +57,7 @@ class ExperimentNode(template.Node):
         # Get variant from server
         request = self.request.resolve(context)
         is_a_bot = False
-        user_id = None if request.user.is_anonymous() else request.user.id
+        user_id = request.session.get('bernoulli_id', None) if request.user.is_anonymous() else request.user.id
         experiment = None
 
         if not user_id:
@@ -70,15 +70,17 @@ class ExperimentNode(template.Node):
                 user_id,
             )
 
-            if user_id is None:
-                pass
-                # Save the user id into a cookie so that user has an "id"
 
             experiment = None
             for e in experiments:
                 if e['client_id'] == self.experiment_id:
                     experiment = e
                     break
+
+
+            if user_id is None and experiment is not None:
+                # save user id to session for use later
+                request.session['bernoulli_id'] = experiment['user_id']
 
         output = ''
         for variant, nodelist, is_control in self.variant_nodelists:

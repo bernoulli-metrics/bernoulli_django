@@ -20,7 +20,7 @@ def experiment(parser, token):
 
     experiment_id = args[1]
     request = args[2]
-    should_bucket = args[3]
+    # should_bucket = args[3]
 
     # FIXME: handle custom dimensions
 

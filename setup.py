@@ -11,7 +11,7 @@ setup(
     package=['bernoulli_django'],
     license='MIT',
     description='Package to integrate django app with Bernoulli',
-    url='https://github.com/joeyg/bernoulli_django',
+    url='https://github.com/bernoulli-metrics/bernoulli_django',
     author='Joe Gasiorek',
     author_email='joe.gasiorek@gmail.com',
     install_requires=['bernoulli']

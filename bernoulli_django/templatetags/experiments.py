@@ -73,7 +73,7 @@ class ExperimentNode(template.Node):
 
             experiment = None
             for e in experiments:
-                if e['client_id'] == self.experiment_id:
+                if e['id'] == self.experiment_id:
                     experiment = e
                     break
 

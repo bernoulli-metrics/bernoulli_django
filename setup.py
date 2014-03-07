@@ -14,5 +14,5 @@ setup(
     url='https://github.com/bernoulli-metrics/bernoulli_django',
     author='Joe Gasiorek',
     author_email='joe.gasiorek@gmail.com',
-    install_requires=['bernoulli>=0.1.4']
+    install_requires=['bernoulli>=0.1.6']
 )

@@ -65,9 +65,9 @@ class ExperimentNode(template.Node):
 
         if not is_a_bot:
             experiments = bernoulli.get_experiments(
-                settings.BERNOULLI_CLIENT_ID,
-                self.experiment_id,
-                user_id,
+                client_id=settings.BERNOULLI_CLIENT_ID,
+                experiment_ids=self.experiment_id,
+                user_id=user_id,
             )
 
 
